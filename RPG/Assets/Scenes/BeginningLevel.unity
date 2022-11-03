@@ -662,6 +662,11 @@ MonoBehaviour:
   xMove: 10
   yMove: 10
   speed: 10
+--- !u!4 &1212981986 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1355751797988729844, guid: fc54bf879ab8e5e45920f2d5efaba918, type: 3}
+  m_PrefabInstance: {fileID: 7364402219355135988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1830360917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -793,6 +798,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e67cc427abdc244986ee3eaaab7132f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1212981979}
+  playerPos: {fileID: 1212981986}
+  assailant: {fileID: 1841831259}
+  combatScreen: CombatScreen
 --- !u!61 &1841831263
 BoxCollider2D:
   m_ObjectHideFlags: 0
