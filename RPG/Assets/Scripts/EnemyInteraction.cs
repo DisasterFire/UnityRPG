@@ -7,28 +7,37 @@ using UnityEngine.SceneManagement;
 
 public class EnemyInteraction : MonoBehaviour
 {
-    public GameObject player;
+    public Collider2D player;
     public Transform playerPos;
-    public GameObject assailant;
+    public Collider2D assailant;
 
     public string combatScreen;
 
     // Update is called once per frame
     void Update()
     {
-      
+        
     }
 
-    void OnCollisionStay2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D player)
     {
         Debug.Log("Entered");
+    }
+    void OnTriggerStay2D(Collider2D player)
+    {
         EnterCombat();
     }
 
-    void EnterCombat()
+    void OnTriggerExit2D(Collider2D player)
     {
-        if(Input.GetKeyDown("e"))
+        Debug.Log("Exited");
+
+    }
+    void EnterCombat()
+    { 
+        if (Input.GetKeyDown("e"))
         {
+            Debug.Log("Engaging Combat Systems");
             SceneManager.LoadScene(combatScreen);
         }
     }
