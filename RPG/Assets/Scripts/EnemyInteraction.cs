@@ -16,23 +16,9 @@ public class EnemyInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void OnTriggerEnter2D(Collider2D player)
-    {
-        Debug.Log("Entered");
-    }
-    void OnTriggerStay2D(Collider2D player)
-    {
         EnterCombat();
     }
 
-    void OnTriggerExit2D(Collider2D player)
-    {
-        Debug.Log("Exited");
-
-    }
     void EnterCombat()
     { 
         if (Input.GetKeyDown("e"))

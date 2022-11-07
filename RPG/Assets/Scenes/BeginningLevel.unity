@@ -798,9 +798,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e67cc427abdc244986ee3eaaab7132f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1212981979}
+  player: {fileID: 1212981981}
   playerPos: {fileID: 1212981986}
-  assailant: {fileID: 1841831259}
+  assailant: {fileID: 1841831263}
   combatScreen: CombatScreen
 --- !u!61 &1841831263
 BoxCollider2D:
@@ -815,7 +815,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.1868486, y: 0.08991337}
+  m_Offset: {x: -0.053946495, y: 0.035965562}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -826,7 +826,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.3736973, y: 4.0570364}
+  m_Size: {x: 1.035963, y: 1.1438601}
   m_EdgeRadius: 0
 --- !u!1001 &2037860742
 PrefabInstance:
