@@ -7,25 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class EnemyInteraction : MonoBehaviour
 {
-    public Collider2D player;
-    public Transform playerPos;
-    public Collider2D assailant;
-
     public string combatScreen;
 
     // Update is called once per frame
-    void Update()
-    {
-        EnterCombat();
-    }
 
-    void EnterCombat()
+    public void EnterCombat()
     { 
-        if (Input.GetKeyDown("e"))
-        {
-            Debug.Log("Engaging Combat Systems");
-            SceneManager.LoadScene(combatScreen);
-        }
+
+         Debug.Log("Engaging Combat Systems");
+         SceneManager.LoadScene(combatScreen);
+
     }
 
 }
