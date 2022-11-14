@@ -5,7 +5,8 @@ using UnityEngine;
 public class CombatButtons : MonoBehaviour
 {
     public bool standard, darkness, divinity;
-    public string userInput;
+    public int maxEnemyHP = 20;
+    public int enemyHP;
 
     public void ViewEnemyStats()
     {
@@ -17,6 +18,7 @@ public class CombatButtons : MonoBehaviour
         standard = true;
         darkness = false;
         divinity = false;
+        enemyHP = maxEnemyHP;
     }
 
     public void DarknessAbilities()
@@ -31,5 +33,10 @@ public class CombatButtons : MonoBehaviour
         standard = false;
         darkness = false;
         divinity = true;
+    }
+
+    public void Attack()
+    {
+        enemyHP -= 1;
     }
 }
