@@ -29,6 +29,10 @@ public class CombatButtons : MonoBehaviour
 
     public bool turnSwitch = false;
 
+    void Start()
+    {
+        playerHP = maxPlayerHP;
+    }
     public void ViewEnemyStats()
     {
 
@@ -41,7 +45,6 @@ public class CombatButtons : MonoBehaviour
         divinity = false;
         if(!sInitialized)
         {
-            playerHP = maxPlayerHP;
             enemyHP = maxEnemyHP;
             sInitialized = true;
         }
@@ -60,7 +63,6 @@ public class CombatButtons : MonoBehaviour
 
         if (!sInitialized)
         {
-            playerHP = maxPlayerHP;
             enemyHP = maxEnemyHP;
             sInitialized = true;
         }
@@ -81,7 +83,6 @@ public class CombatButtons : MonoBehaviour
 
         if (!sInitialized)
         {
-            playerHP = maxPlayerHP;
             enemyHP = maxEnemyHP;
             sInitialized = true;
         }
@@ -167,6 +168,10 @@ public class CombatButtons : MonoBehaviour
         {
             darkButton.interactable = false;
             divineButton.interactable = false;
+        }
+        if(playerHP <= 2)
+        {
+            darkButton.interactable = false;
         }
     }
 
