@@ -8,11 +8,13 @@ public class StartButtonScript : MonoBehaviour
     public string gameLevel;
     public string instructions;
     public string credits;
+
+    public Animator sceneSwap;
+    public float delayTime;
     
     public void OnButtonPress()
     {
-        Debug.Log("Button Pressed");
-        SceneManager.LoadScene(gameLevel);
+        StartCoroutine(LevelTransition(gameLevel));
     }
 
     public void OnTutoButtonPress()
@@ -25,6 +27,15 @@ public class StartButtonScript : MonoBehaviour
     {
         Debug.Log("Button Pressed");
         SceneManager.LoadScene(credits);
+    }
+
+    IEnumerator LevelTransition(string levelName)
+    {
+        sceneSwap.SetTrigger("Start");
+
+        yield return new WaitForSeconds(delayTime);
+
+        SceneManager.LoadScene(levelName);
     }
 
 }
