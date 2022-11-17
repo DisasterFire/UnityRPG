@@ -15,6 +15,7 @@ public class CombatButtons : MonoBehaviour
     public float playerAP;
     public bool outOfAP = false;
     public string winScreen;
+    public string loseScreen;
     bool sInitialized = false;
     bool dInitialized = false;
 
@@ -149,7 +150,7 @@ public class CombatButtons : MonoBehaviour
 
     void LoseGame()
     {
-        SceneManager.LoadScene(winScreen);
+        SceneManager.LoadScene(loseScreen);
     }
 
     void Update()

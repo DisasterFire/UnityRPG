@@ -2635,7 +2635,8 @@ MonoBehaviour:
   maxPlayerAP: 20
   playerAP: 0
   outOfAP: 0
-  winScreen: MainMenu
+  winScreen: WinScreen
+  loseScreen: LoseScreen
   EnemyHPBar: {fileID: 2108685358}
   PlayerHPBar: {fileID: 917259044}
   PlayerAPBar: {fileID: 1724587932}
