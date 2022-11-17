@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CombatScreen.unity
     guid: 23f84b88e2a017646b8c303ca80c4e1d
   - enabled: 1
-    path: Assets/Scenes/InterrogationScene.unity
-    guid: 415132a7bab1f6e449ebe25dd75c2034
+    path: Assets/Scenes/LoseScreen.unity
+    guid: 4f4a95d55c359d64abbbaec03a3c0b8d
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: d5b2f3d62eae5d24996f5b6de3b570bb
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
