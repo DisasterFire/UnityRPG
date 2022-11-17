@@ -159,7 +159,8 @@ public class CombatButtons : MonoBehaviour
             standardAttack.interactable = false;
             darkButton.interactable = false;
             divineButton.interactable = false;
-            Invoke("EnemyCombat", 3);
+            Invoke("EnemyCombat", 2);
+            turnSwitch = false;
         }
         if(outOfAP == true)
         {
@@ -172,7 +173,6 @@ public class CombatButtons : MonoBehaviour
     {
         playerHP -= 5;
         PlayerHPUpdate();
-        turnSwitch = false;
         if (playerHP <= 0)
         {
             LoseGame();
