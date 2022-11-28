@@ -19,6 +19,12 @@ public class CombatButtons : MonoBehaviour
     bool sInitialized = false;
     bool dInitialized = false;
 
+    public GameObject EnemyUnit;
+    public Transform emptyLocation;
+    public int damage;
+
+    Unit enemyUnit;
+
     public Image EnemyHPBar;
     public Image PlayerHPBar;
     public Image PlayerAPBar;
@@ -32,6 +38,10 @@ public class CombatButtons : MonoBehaviour
     void Start()
     {
         playerHP = maxPlayerHP;
+        GameObject empty = GameObject.Instantiate(EnemyUnit, emptyLocation);
+        enemyUnit = empty.GetComponent<Unit>();
+
+        damage = enemyUnit.damage;
     }
     public void ViewEnemyStats()
     {
@@ -177,7 +187,8 @@ public class CombatButtons : MonoBehaviour
 
     void EnemyCombat()
     {
-        playerHP -= 5;
+        playerHP -= damage;
+        Debug.Log("Subtracted Damage");
         PlayerHPUpdate();
         if (playerHP <= 0)
         {

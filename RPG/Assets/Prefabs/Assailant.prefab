@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityName: James Blanc
+  entityProfession: The Chemist
   entityLevel: 1
   damage: 5
   maxHealth: 30

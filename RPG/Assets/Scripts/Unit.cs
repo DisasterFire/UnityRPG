@@ -5,6 +5,7 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     public string entityName;
+    public string entityProfession;
     public int entityLevel;
 
     public int damage;

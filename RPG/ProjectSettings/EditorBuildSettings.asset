@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CombatScreen.unity
     guid: 23f84b88e2a017646b8c303ca80c4e1d
   - enabled: 1
+    path: Assets/Scenes/MidLevel.unity
+    guid: e35000cecfeaeee4c9bbaff06cd6281f
+  - enabled: 1
+    path: Assets/Scenes/MidCombat.unity
+    guid: 94bde1116d1e4b04d93e6f6f40522965
+  - enabled: 1
     path: Assets/Scenes/LoseScreen.unity
     guid: 4f4a95d55c359d64abbbaec03a3c0b8d
   - enabled: 1

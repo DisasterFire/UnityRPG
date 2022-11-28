@@ -37,7 +37,7 @@ public class BattleScript : MonoBehaviour
         GameObject assailantObject = Instantiate(assailant, assailantStation);
         assailantUnit = assailantObject.GetComponent<Unit>();
 
-        assailantDialogue.text = assailantUnit.entityName + ", The Chemist";
+        assailantDialogue.text = assailantUnit.entityName + ", " + assailantUnit.entityProfession;
 
     }
 
