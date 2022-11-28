@@ -516,7 +516,7 @@ MonoBehaviour:
   maxPlayerAP: 20
   playerAP: 0
   outOfAP: 0
-  winScreen: WinScreen
+  winScreen: 3rdLevel
   loseScreen: LoseScreen
   EnemyUnit: {fileID: 3743128547357556920, guid: d1c27e5d0bcbd6047b086f1ab0462168, type: 3}
   emptyLocation: {fileID: 1733774566}
