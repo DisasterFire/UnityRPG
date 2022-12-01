@@ -19,10 +19,15 @@ public class CombatButtons : MonoBehaviour
     bool sInitialized = false;
     bool dInitialized = false;
 
+    //public bool initCombat = false;
+
+    public GameObject PlayerUnit;
     public GameObject EnemyUnit;
     public Transform emptyLocation;
-    public int damage;
+    public float damage;
+    public float attackDamage;
 
+    PlayerUnit playerUnit;
     Unit enemyUnit;
 
     public Image EnemyHPBar;
@@ -37,15 +42,37 @@ public class CombatButtons : MonoBehaviour
 
     void Start()
     {
-        playerHP = maxPlayerHP;
         GameObject empty = GameObject.Instantiate(EnemyUnit, emptyLocation);
+        GameObject playerEmpty = GameObject.Instantiate(PlayerUnit, emptyLocation);
+        playerUnit = playerEmpty.GetComponent<PlayerUnit>();
         enemyUnit = empty.GetComponent<Unit>();
-
-        damage = enemyUnit.damage;
+        if (playerUnit.initOnce == true)
+        {
+            InitCombat();
+            playerUnit.initCombat();
+            playerUnit.initOnce = false;
+        }
+        else if(playerUnit.secondInit == true)
+        {
+            secondInit();
+        }
     }
-    public void ViewEnemyStats()
+    public void InitCombat()
     {
+        damage = enemyUnit.damage;
+        attackDamage = playerUnit.attackDamage;
+        maxPlayerHP = playerUnit.maxHealth;
+        playerHP = maxPlayerHP;
+        maxPlayerAP = playerUnit.maxAbilityPoints;
+        playerAP = maxPlayerAP;
+        maxEnemyHP = enemyUnit.maxHealth;
+        enemyHP = maxEnemyHP;
+    }
 
+    public void secondInit()
+    {
+        PlayerHPUpdate();
+        PlayerAPUpdate();
     }
 
     public void StandardAbilities()
@@ -106,7 +133,7 @@ public class CombatButtons : MonoBehaviour
 
     public void Attack()
     {
-        enemyHP -= 2;
+        enemyHP -= attackDamage;
         EnemyHPUpdate();
         if (enemyHP <= 0)
         {
@@ -117,7 +144,7 @@ public class CombatButtons : MonoBehaviour
 
     public void DarkAttack()
     {
-        enemyHP -= 10;
+        enemyHP -= attackDamage*5;
         EnemyHPUpdate();
         playerAP -= 2;
         playerHP -= 2;
@@ -157,6 +184,8 @@ public class CombatButtons : MonoBehaviour
     void WinGame()
     {
         SceneManager.LoadScene(winScreen);
+        playerUnit.secondInit = true;
+        playerUnit.init2nd();
     }
 
     void LoseGame()
@@ -188,6 +217,7 @@ public class CombatButtons : MonoBehaviour
     void EnemyCombat()
     {
         playerHP -= damage;
+        playerUnit.currentHealth -= damage;
         Debug.Log("Subtracted Damage");
         PlayerHPUpdate();
         if (playerHP <= 0)
@@ -213,4 +243,15 @@ public class CombatButtons : MonoBehaviour
     {
         PlayerAPBar.fillAmount = Mathf.Clamp(playerAP / maxPlayerAP, 0, maxPlayerAP);
     }
+
+    public void LevelUp()
+    {
+        playerUnit.entityLevel += 1;
+
+        maxPlayerHP += 10;
+
+        playerHP = maxPlayerHP;
+    }
 }
+
+

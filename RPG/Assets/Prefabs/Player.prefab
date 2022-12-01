@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1355751797988729844}
   - component: {fileID: 5379235617499858101}
+  - component: {fileID: 6568482017079125623}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -84,3 +85,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6568482017079125623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501296655243818620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90d17d757d238e4db9588cc6cc90d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityLevel: 1
+  attackDamage: 5
+  str: 0
+  dark: 0
+  divine: 0
+  maxHealth: 20
+  currentHealth: 20
+  maxAbilityPoints: 0
+  abilityPoints: 0
+  initOnce: 0
+  secondInit: 1

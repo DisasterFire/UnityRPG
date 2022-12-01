@@ -8,8 +8,8 @@ public class Unit : MonoBehaviour
     public string entityProfession;
     public int entityLevel;
 
-    public int damage;
+    public float damage;
 
-    public int maxHealth;
-    public int currentHealth;
+    public float maxHealth;
+    public float currentHealth;
 }
