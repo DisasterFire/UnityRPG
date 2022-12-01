@@ -18,9 +18,6 @@ public class PlayerUnit : MonoBehaviour
     public float maxAbilityPoints;
     public float abilityPoints;
 
-    public bool initOnce = true;
-    public bool secondInit = false;
-
     public void LevelUp()
     {
         entityLevel += 1;
@@ -28,15 +25,5 @@ public class PlayerUnit : MonoBehaviour
         maxHealth += 10;
 
         currentHealth = maxHealth;
-    }
-
-    public void initCombat()
-    {
-        initOnce = false;
-    }
-    
-    public void init2nd()
-    {
-        secondInit = true;
     }
 }

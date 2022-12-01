@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class CombatButtons : MonoBehaviour
 {
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     public bool standard, darkness, divinity;
     public float maxPlayerHP;
     public float playerHP;
@@ -34,6 +39,8 @@ public class CombatButtons : MonoBehaviour
     public Image PlayerHPBar;
     public Image PlayerAPBar;
 
+    public bool initOnce = true;
+
     public Button standardAttack;
     public Button darkButton;
     public Button divineButton;
@@ -46,15 +53,10 @@ public class CombatButtons : MonoBehaviour
         GameObject playerEmpty = GameObject.Instantiate(PlayerUnit, emptyLocation);
         playerUnit = playerEmpty.GetComponent<PlayerUnit>();
         enemyUnit = empty.GetComponent<Unit>();
-        if (playerUnit.initOnce == true)
+        if (initOnce == true)
         {
             InitCombat();
-            playerUnit.initCombat();
-            playerUnit.initOnce = false;
-        }
-        else if(playerUnit.secondInit == true)
-        {
-            secondInit();
+            initOnce = false;
         }
     }
     public void InitCombat()
@@ -184,8 +186,6 @@ public class CombatButtons : MonoBehaviour
     void WinGame()
     {
         SceneManager.LoadScene(winScreen);
-        playerUnit.secondInit = true;
-        playerUnit.init2nd();
     }
 
     void LoseGame()
