@@ -35,24 +35,15 @@ public class CombatScript : MonoBehaviour
     public Image PlayerHPBar;
     public Image PlayerAPBar;
 
-    public bool initOnce = true;
-
     public Button standardAttack;
     public Button darkButton;
     public Button divineButton;
 
     public bool turnSwitch = false;
-    public bool inCombat = false;
-
-    private void Awake()
-    {
-        inCombat = true;
-        DontDestroyOnLoad(this);
-    }
 
     void Start()
     {
-        if(initOnce == true)
+        if(GameManager.instance.initOnce == true)
         {
             GameObject empty = GameObject.Instantiate(EnemyUnit, emptyLocation);
             GameObject playerEmpty = GameObject.Instantiate(PlayerUnit, emptyLocation);
@@ -60,13 +51,20 @@ public class CombatScript : MonoBehaviour
             enemyUnit = empty.GetComponent<Unit>();
             damage = enemyUnit.damage;
             attackDamage = playerUnit.attackDamage;
-            maxPlayerHP = playerUnit.maxHealth;
+            maxPlayerHP = GameManager.instance.maxPlayerHP;
+            maxPlayerAP = GameManager.instance.maxPlayerAP;
+            maxEnemyHP = GameManager.instance.maxEnemyHP;
             playerHP = maxPlayerHP;
-            maxPlayerAP = playerUnit.maxAbilityPoints;
-            playerAP = maxPlayerAP;
-            maxEnemyHP = enemyUnit.maxHealth;
             enemyHP = maxEnemyHP;
-            initOnce = false;
+            playerAP = maxPlayerAP;
+            GameManager.instance.initOnce = false;
+        }
+        if(GameManager.instance.initOnce == false)
+        {
+            playerHP = GameManager.instance.playerHP;
+            PlayerHPUpdate();
+            playerAP = GameManager.instance.playerAP;
+            PlayerAPUpdate();
         }
     }
 
@@ -105,6 +103,7 @@ public class CombatScript : MonoBehaviour
     public void DivineAttack()
     {
         playerAP -= 3;
+        GameManager.instance.UpdateAbility(playerAP);
         playerHP += 10;
         PlayerHPUpdate();
         PlayerAPUpdate();
@@ -124,6 +123,7 @@ public class CombatScript : MonoBehaviour
     void EnemyCombat()
     {
         playerHP -= damage;
+        GameManager.instance.UpdateHealth(playerHP);
         playerUnit.currentHealth -= damage;
         Debug.Log("Subtracted Damage");
         PlayerHPUpdate();
@@ -163,20 +163,16 @@ public class CombatScript : MonoBehaviour
 void WinGame()
     {
         SceneManager.LoadScene(winScreen);
-        inCombat = false;
     }
 
     void LoseGame()
     {
         SceneManager.LoadScene(loseScreen);
-        inCombat = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(inCombat == true)
-        {
             if (turnSwitch == true)
             {
                 standardAttack.interactable = false;
@@ -194,6 +190,5 @@ void WinGame()
             {
                 darkButton.interactable = false;
             }
-        }
     }
 }
