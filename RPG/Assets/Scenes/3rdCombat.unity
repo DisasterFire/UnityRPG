@@ -1303,7 +1303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 962317661}
-  - component: {fileID: 962317660}
+  - component: {fileID: 962317662}
   m_Layer: 0
   m_Name: CombatManager
   m_TagString: Untagged
@@ -1311,42 +1311,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &962317660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962317659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ac348b4e666a54fb4a5eb5a46c4e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  standard: 0
-  darkness: 0
-  divinity: 0
-  maxPlayerHP: 20
-  playerHP: 0
-  maxEnemyHP: 30
-  enemyHP: 0
-  maxPlayerAP: 20
-  playerAP: 0
-  outOfAP: 0
-  winScreen: WinScreen
-  loseScreen: LoseScreen
-  PlayerUnit: {fileID: 5501296655243818620, guid: fc54bf879ab8e5e45920f2d5efaba918, type: 3}
-  EnemyUnit: {fileID: 6477266813456832774, guid: b34b1ccffa0356e4b844648f89f4e3e8, type: 3}
-  emptyLocation: {fileID: 1049211733}
-  damage: 0
-  attackDamage: 0
-  EnemyHPBar: {fileID: 1906297499}
-  PlayerHPBar: {fileID: 46201707}
-  PlayerAPBar: {fileID: 1027941141}
-  standardAttack: {fileID: 1801555704}
-  darkButton: {fileID: 1939779363}
-  divineButton: {fileID: 1319447170}
-  turnSwitch: 0
 --- !u!4 &962317661
 Transform:
   m_ObjectHideFlags: 0
@@ -1362,6 +1326,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &962317662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962317659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685b0e066da3660409f7608d2bb2d100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standard: 0
+  darkness: 0
+  divinity: 0
+  maxPlayerHP: 20
+  playerHP: 0
+  maxEnemyHP: 50
+  enemyHP: 0
+  maxPlayerAP: 35
+  playerAP: 0
+  outOfAP: 0
+  winScreen: WinScreen
+  loseScreen: LoseScreen
+  PlayerUnit: {fileID: 5501296655243818620, guid: fc54bf879ab8e5e45920f2d5efaba918, type: 3}
+  EnemyUnit: {fileID: 6477266813456832774, guid: b34b1ccffa0356e4b844648f89f4e3e8, type: 3}
+  emptyLocation: {fileID: 1049211733}
+  damage: 5
+  attackDamage: 15
+  EnemyHPBar: {fileID: 1906297499}
+  PlayerHPBar: {fileID: 46201707}
+  PlayerAPBar: {fileID: 1027941141}
+  initOnce: 1
+  standardAttack: {fileID: 1801555704}
+  darkButton: {fileID: 1939779363}
+  divineButton: {fileID: 1319447170}
+  turnSwitch: 0
+  inCombat: 0
 --- !u!1 &1027941138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,20 +1888,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 962317660}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
-        m_MethodName: DivinityAbilities
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 962317660}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
+      - m_Target: {fileID: 962317662}
+        m_TargetAssemblyTypeName: CombatScript, Assembly-CSharp
         m_MethodName: DivineAttack
         m_Mode: 1
         m_Arguments:
@@ -2464,20 +2454,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 962317660}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
-        m_MethodName: StandardAbilities
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 962317660}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
+      - m_Target: {fileID: 962317662}
+        m_TargetAssemblyTypeName: CombatScript, Assembly-CSharp
         m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
@@ -2871,20 +2849,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 962317660}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
-        m_MethodName: DarknessAbilities
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 962317660}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
+      - m_Target: {fileID: 962317662}
+        m_TargetAssemblyTypeName: CombatScript, Assembly-CSharp
         m_MethodName: DarkAttack
         m_Mode: 1
         m_Arguments:

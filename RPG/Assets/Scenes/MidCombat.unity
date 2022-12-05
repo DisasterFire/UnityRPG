@@ -477,74 +477,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219747833}
   m_CullTransparentMesh: 1
---- !u!1 &429833769
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 429833771}
-  - component: {fileID: 429833770}
-  m_Layer: 0
-  m_Name: CombatManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &429833770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429833769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ac348b4e666a54fb4a5eb5a46c4e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  standard: 0
-  darkness: 0
-  divinity: 0
-  maxPlayerHP: 20
-  playerHP: 0
-  maxEnemyHP: 30
-  enemyHP: 0
-  maxPlayerAP: 20
-  playerAP: 0
-  outOfAP: 0
-  winScreen: 3rdLevel
-  loseScreen: LoseScreen
-  PlayerUnit: {fileID: 5501296655243818620, guid: fc54bf879ab8e5e45920f2d5efaba918, type: 3}
-  EnemyUnit: {fileID: 3743128547357556920, guid: d1c27e5d0bcbd6047b086f1ab0462168, type: 3}
-  emptyLocation: {fileID: 1733774566}
-  damage: 0
-  attackDamage: 0
-  EnemyHPBar: {fileID: 734762494}
-  PlayerHPBar: {fileID: 956358777}
-  PlayerAPBar: {fileID: 884212811}
-  standardAttack: {fileID: 1300468159}
-  darkButton: {fileID: 773791219}
-  divineButton: {fileID: 1896806449}
-  turnSwitch: 0
---- !u!4 &429833771
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429833769}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4363675, y: 5.1776123, z: 0.6362894}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442249658
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +687,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &734762491
 GameObject:
@@ -955,20 +887,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 429833770}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
-        m_MethodName: DarknessAbilities
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 429833770}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
+      - m_Target: {fileID: 1517069220}
+        m_TargetAssemblyTypeName: CombatScript, Assembly-CSharp
         m_MethodName: DarkAttack
         m_Mode: 1
         m_Arguments:
@@ -1249,7 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.20040011, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1291,7 +1211,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061769246}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1301,7 +1221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.19983, y: -364}
+  m_AnchoredPosition: {x: 89.19983, y: -363.99997}
   m_SizeDelta: {x: 166.6, y: 21.6034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1061769248
@@ -1464,20 +1384,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 429833770}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
-        m_MethodName: StandardAbilities
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 429833770}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
+      - m_Target: {fileID: 1517069220}
+        m_TargetAssemblyTypeName: CombatScript, Assembly-CSharp
         m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
@@ -2047,6 +1955,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502359962}
   m_CullTransparentMesh: 1
+--- !u!1 &1517069219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517069221}
+  - component: {fileID: 1517069220}
+  m_Layer: 0
+  m_Name: CombatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1517069220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517069219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685b0e066da3660409f7608d2bb2d100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standard: 0
+  darkness: 0
+  divinity: 0
+  maxPlayerHP: 20
+  playerHP: 0
+  maxEnemyHP: 50
+  enemyHP: 0
+  maxPlayerAP: 35
+  playerAP: 0
+  outOfAP: 0
+  winScreen: 3rdLevel
+  loseScreen: LoseScreen
+  PlayerUnit: {fileID: 5501296655243818620, guid: fc54bf879ab8e5e45920f2d5efaba918, type: 3}
+  EnemyUnit: {fileID: 6477266813456832774, guid: b34b1ccffa0356e4b844648f89f4e3e8, type: 3}
+  emptyLocation: {fileID: 1733774566}
+  damage: 5
+  attackDamage: 15
+  EnemyHPBar: {fileID: 734762494}
+  PlayerHPBar: {fileID: 956358777}
+  PlayerAPBar: {fileID: 884212811}
+  initOnce: 1
+  standardAttack: {fileID: 1300468159}
+  darkButton: {fileID: 773791219}
+  divineButton: {fileID: 1896806449}
+  turnSwitch: 0
+  inCombat: 0
+--- !u!4 &1517069221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517069219}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.4363675, y: 5.1776123, z: 0.6362894}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1529048885
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,7 +2656,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1843715275
 GameObject:
@@ -2774,20 +2752,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 429833770}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
-        m_MethodName: DivinityAbilities
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 429833770}
-        m_TargetAssemblyTypeName: CombatButtons, Assembly-CSharp
+      - m_Target: {fileID: 1517069220}
+        m_TargetAssemblyTypeName: CombatScript, Assembly-CSharp
         m_MethodName: DivineAttack
         m_Mode: 1
         m_Arguments:
