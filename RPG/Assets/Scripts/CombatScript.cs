@@ -61,10 +61,15 @@ public class CombatScript : MonoBehaviour
         }
         if(GameManager.instance.initOnce == false)
         {
+            GameObject empty = GameObject.Instantiate(EnemyUnit, emptyLocation);
+            GameObject playerEmpty = GameObject.Instantiate(PlayerUnit, emptyLocation);
+            playerUnit = playerEmpty.GetComponent<PlayerUnit>();
+            enemyUnit = empty.GetComponent<Unit>();
             playerHP = GameManager.instance.playerHP;
             PlayerHPUpdate();
             playerAP = GameManager.instance.playerAP;
             PlayerAPUpdate();
+            enemyHP = maxEnemyHP;
         }
     }
 
