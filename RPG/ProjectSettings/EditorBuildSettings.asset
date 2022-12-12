@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/HowToPlay.unity
     guid: 4a5b9e8eb3223ce4ea0343dd4845667b
   - enabled: 1
+    path: Assets/Scenes/Story.unity
+    guid: b6ff7a4983a9e704fbadc6d484a3fea9
+  - enabled: 1
     path: Assets/Scenes/AttackTuto.unity
     guid: 62f833d5954b1e041816b5587d89ee3d
   - enabled: 1

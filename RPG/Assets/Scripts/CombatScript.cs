@@ -75,7 +75,7 @@ public class CombatScript : MonoBehaviour
 
     public void Attack()
     {
-        enemyHP -= attackDamage;
+        enemyHP -= attackDamage + GameManager.instance.str;
         EnemyHPUpdate();
         if (enemyHP <= 0)
         {
@@ -86,7 +86,7 @@ public class CombatScript : MonoBehaviour
 
     public void DarkAttack()
     {
-        enemyHP -= attackDamage * 5;
+        enemyHP -= attackDamage + GameManager.instance.dark;
         EnemyHPUpdate();
         playerAP -= 2;
         playerHP -= 2;
@@ -107,9 +107,9 @@ public class CombatScript : MonoBehaviour
 
     public void DivineAttack()
     {
-        playerAP -= 3;
+        playerAP -= 5;
         GameManager.instance.UpdateAbility(playerAP);
-        playerHP += 10;
+        playerHP += 15 + GameManager.instance.divine;
         PlayerHPUpdate();
         PlayerAPUpdate();
         if (enemyHP <= 0)

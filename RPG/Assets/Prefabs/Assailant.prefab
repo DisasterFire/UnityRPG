@@ -49,8 +49,8 @@ MonoBehaviour:
   entityProfession: The Chemist
   entityLevel: 1
   damage: 5
-  maxHealth: 30
-  currentHealth: 30
+  maxHealth: 50
+  currentHealth: 50
 --- !u!1 &6477266814128856178
 GameObject:
   m_ObjectHideFlags: 0

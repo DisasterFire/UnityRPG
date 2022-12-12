@@ -7,6 +7,7 @@ public class StartButtonScript : MonoBehaviour
 {
     public string gameLevel;
     public string instructions;
+    public string narrative;
     public string credits;
 
     public Animator sceneSwap;
@@ -27,6 +28,11 @@ public class StartButtonScript : MonoBehaviour
     {
         Debug.Log("Button Pressed");
         SceneManager.LoadScene(credits);
+    }
+
+    public void OnNarrative()
+    {
+        SceneManager.LoadScene(narrative);
     }
 
     IEnumerator LevelTransition(string levelName)
