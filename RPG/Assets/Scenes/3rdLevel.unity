@@ -2268,6 +2268,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 836317927}
+        m_TargetAssemblyTypeName: StatScript, Assembly-CSharp
+        m_MethodName: AddStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &1069358913
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3430,6 +3442,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 836317927}
+        m_TargetAssemblyTypeName: StatScript, Assembly-CSharp
+        m_MethodName: AddStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1822435106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4099,6 +4123,18 @@ MonoBehaviour:
       - m_Target: {fileID: 368454890}
         m_TargetAssemblyTypeName: NPCBehavior, Assembly-CSharp
         m_MethodName: CasualConversation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 836317927}
+        m_TargetAssemblyTypeName: StatScript, Assembly-CSharp
+        m_MethodName: AddStats
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
