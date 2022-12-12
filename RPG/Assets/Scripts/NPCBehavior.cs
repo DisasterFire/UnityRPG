@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class NPCBehavior : MonoBehaviour
 {
+    public PlayerUnit player;
+    public Transform trash;
 
     public Button STR, Dark, Divine;
+
 
     public bool talkFive;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Instantiate(player, trash);
     }
 
     // Update is called once per frame

@@ -8,15 +8,15 @@ public class PlayerUnit : MonoBehaviour
 
     public float attackDamage;
 
-    public float str;
-    public float dark;
-    public float divine;
+    public float str = GameManager.instance.str;
+    public float dark = GameManager.instance.dark;
+    public float divine = GameManager.instance.divine;
 
-    public float maxHealth;
-    public float currentHealth;
+    public float maxHealth = GameManager.instance.maxPlayerHP;
+    public float currentHealth = GameManager.instance.playerHP;
 
-    public float maxAbilityPoints;
-    public float abilityPoints;
+    public float maxAbilityPoints = GameManager.instance.maxPlayerAP;
+    public float abilityPoints = GameManager.instance.playerAP;
 
     public void LevelUp()
     {
